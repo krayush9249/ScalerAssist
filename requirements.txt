@@ -25,6 +25,7 @@ pinecone-client
 pinecone-text
 pinecone-notebooks
 FlagEmbedding
+peft
 streamlit
 watchdog
 ragas 
