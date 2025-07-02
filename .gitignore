@@ -41,6 +41,11 @@ Thumbs.db
 *.bin
 VectorStore/chroma_db/
 
+# Binary files
+*.eot
+*.woff
+*.ttf
+
 # Temporary files
 tmp/
 temp/
