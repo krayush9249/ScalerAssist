@@ -12,8 +12,11 @@ os.environ['LANGCHAIN_API_KEY'] = os.getenv('LANGCHAIN_API_KEY')
 os.environ['LANGCHAIN_TRACING_V2'] = 'true'
 os.environ['LANGCHAIN_PROJECT'] = 'ScalerAssist'
 
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-INFER_MODEL_NAME = os.getenv("INFER_MODEL_NAME")
+# GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+# INFER_MODEL_NAME = os.getenv("INFER_MODEL_NAME")
+
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
+INFER_MODEL_NAME = st.secrets["INFER_MODEL_NAME"]
 
 # Streamlit app config
 st.set_page_config(page_title="ScalerAssist AI", layout="centered")
