@@ -1,2 +1,0 @@
-Context/PDFs/*.pdf filter=lfs diff=lfs merge=lfs -text
-Context/Text/*.txt filter=lfs diff=lfs merge=lfs -text
