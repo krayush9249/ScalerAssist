@@ -1,0 +1,45 @@
+# Virtual Environment
+bin/
+lib/
+
+# Environment variable
+*.env
+
+# API keys and secrets
+config/secrets.yaml
+*.key
+secrets/
+
+# Python
+__pycache__/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Database files
+*.db
+*.sqlite
+
+# Logs
+*.log
+logs/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Large model files 
+*.pkl
+*.bin
+VectorStore/chroma_db/
+
+# Temporary files
+tmp/
+temp/
+cache/
