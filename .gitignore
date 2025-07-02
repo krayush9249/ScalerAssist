@@ -44,4 +44,4 @@ VectorStore/chroma_db/
 # Temporary files
 tmp/
 temp/
-cache/
+cache/venv-scaler-assist/
