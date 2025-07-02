@@ -1,19 +1,35 @@
 name: Sync to Hugging Face hub
+
 on:
   push:
     branches: [main]
-
   workflow_dispatch:
 
 jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
           lfs: true
-      - name: Push to hub
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+
+      - name: Add Hugging Face remote and pull latest changes
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://krayush9249:$HF_TOKEN@huggingface.co/spaces/krayush9249/ScalerAssist main
+        run: |
+          git remote add hf https://krayush9249:${HF_TOKEN}@huggingface.co/spaces/krayush9249/ScalerAssist
+          git fetch hf
+          git rebase hf/main
+
+      - name: Push to Hugging Face
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          git push hf main
