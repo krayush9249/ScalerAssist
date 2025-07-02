@@ -21,7 +21,6 @@ langchain_groq
 langchain_experimental
 pinecone
 langchain-pinecone
-pinecone-client
 pinecone-text
 pinecone-notebooks
 FlagEmbedding
