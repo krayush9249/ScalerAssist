@@ -77,7 +77,6 @@ if prompt := st.chat_input("Ask me about Scaler Academy..."):
                 })
                 answer = result["answer"]
                 
-                # Display the answer
                 st.markdown(answer)
                 
                 # Add assistant response to chat history
