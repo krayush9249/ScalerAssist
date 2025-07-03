@@ -21,7 +21,7 @@ ScalerAssist AI is a conversational agent powered by Retrieval-Augmented Generat
 * 🔍 **Contextual Retrieval** with Pinecone vector store
 * 🧠 **Hybrid Memory**: Combines summarized + recent chat history
 * 💬 **Conversational Interface** using Streamlit
-* 🤖 **LLM-powered reasoning** with Groq/ChatGPT integration
+* 🤖 **LLM-powered reasoning** with Groq integration
 * 📚 **PDF-to-Chat pipeline** for ingestion from raw brochure files
 
 ---
