@@ -1,3 +1,5 @@
+# RAGAS Evaluation Without Reference Answers
+
 import os
 import sys
 from dotenv import load_dotenv
@@ -6,6 +8,7 @@ from hist_rag_chain_v2 import create_rag_chain
 from ragas import evaluate
 from datasets import Dataset
 from ragas.metrics import faithfulness, answer_relevancy, context_precision, context_recall
+from langchain_groq import ChatGroq
 
 # Load environment variables
 env_path = "/Users/kumarpersonal/Downloads/ScalerAssist/venv-scaler-assist/.env"
@@ -15,6 +18,7 @@ load_dotenv(dotenv_path=env_path)
 os.environ['LANGCHAIN_API_KEY'] = os.getenv('LANGCHAIN_API_KEY')
 os.environ['LANGCHAIN_TRACING_V2'] = 'true'
 os.environ['LANGCHAIN_PROJECT'] = 'ScalerAssist'
+os.environ["OPENAI_API_KEY"] = "sk-placeholder"
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 INFER_MODEL_NAME = os.getenv("INFER_MODEL_NAME")
@@ -30,9 +34,17 @@ def run_ragas_eval(query: str, answer: str, retrieved_docs):
         "contexts": [contexts_text],
     })
 
+    # Create Groq LLM instance for RAGAS
+    groq_llm = ChatGroq(
+        api_key=GROQ_API_KEY,
+        model_name=INFER_MODEL_NAME,
+        temperature=0
+    )
+
     results = evaluate(
         ragas_data,
-        metrics=[faithfulness, answer_relevancy, context_precision, context_recall]
+        metrics=[faithfulness, answer_relevancy],
+        llm=groq_llm
     )
     
     return results
@@ -105,11 +117,11 @@ def main():
     results = run_evaluation_batch(test_questions)
     
     # Save results to file
-    import json
-    with open("evaluation_results.json", "w") as f:
-        json.dump(results, f, indent=2)
+    # import json
+    # with open("evaluation_results.json", "w") as f:
+    #     json.dump(results, f, indent=2)
     
-    print(f"\nEvaluation complete! Results saved to evaluation_results.json")
+    # print(f"\nEvaluation complete! Results saved to evaluation_results.json")
 
 if __name__ == "__main__":
     main()
