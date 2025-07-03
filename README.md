@@ -1,6 +1,6 @@
-# 🤖 ScalerAssist AI — RAG-based Chatbot
+# 🤖 ScalerAssist AI — RAG-based QnA Chatbot
 
-**A Retrieval-Augmented Generation (RAG) assistant to explore Scaler Academy's offerings, built using Pinecone, OpenAI/Groq LLMs, and Streamlit.**
+**A Retrieval-Augmented Generation (RAG) assistant to explore Scaler Academy's offerings, built using Pinecone, Groq LLMs, and Streamlit.**
 
 ---
 
@@ -21,7 +21,7 @@ ScalerAssist AI is a conversational agent powered by Retrieval-Augmented Generat
 * 🔍 **Contextual Retrieval** with Pinecone vector store
 * 🧠 **Hybrid Memory**: Combines summarized + recent chat history
 * 💬 **Conversational Interface** using Streamlit
-* 🤖 **LLM-powered reasoning** with Groq/ChatGPT integration
+* 🤖 **LLM-powered reasoning** with Groq integration
 * 📚 **PDF-to-Chat pipeline** for ingestion from raw brochure files
 
 ---
@@ -36,6 +36,7 @@ ScalerAssist AI is a conversational agent powered by Retrieval-Augmented Generat
 | Backend          | Python + LangChain          |
 | Frontend         | Streamlit                   |
 | Document Parsing | Custom OCR pipeline         |
+| Evaluation       | RAGAS Framework             |
 
 ---
 
@@ -55,6 +56,8 @@ scaler-assist/
 │   ├── text_cleaner.py   
 │   ├── text_splitter.py 
 │   ├── create_index.py
+│   ├── ragas_eval_no_ref.py
+│   ├── ragas_eval_with_ref.py
 │   └── IPYNB/                     
 │
 ├── Context/
@@ -97,6 +100,11 @@ scaler-assist/
 
    * `hist_main_v2.py` sets up a Streamlit chatbot interface
    * Preserves chat state and clears memory on "New Chat"
+  
+5. **Evaluation**:
+
+   * `ragas_eval_runner.py` performs automated evaluation using RAGAS
+   * Evaluates *faithfulness*, *answer relevancy*, *context recall*, and *context precision*
 
 ---
 
@@ -124,7 +132,8 @@ Try the app live on **Streamlit Cloud**:
 * [Scaler Academy](https://www.scaler.com)
 * [LangChain](https://www.langchain.com)
 * [Pinecone](https://www.pinecone.io)
-* [GROQ](https://www.groq.com)
+* [Groq](https://www.groq.com)
 * [HuggingFace](https://huggingface.co/)
+* [Ragas](https://docs.ragas.io/en/stable/)
 
 ---
