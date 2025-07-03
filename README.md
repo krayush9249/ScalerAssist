@@ -1,4 +1,4 @@
-# 🤖 ScalerAssist AI — RAG-based Chatbot
+# 🤖 ScalerAssist AI — RAG-based Q&A Chatbot
 
 **A Retrieval-Augmented Generation (RAG) assistant to explore Scaler Academy's offerings, built using Pinecone, Groq LLMs, and Streamlit.**
 
