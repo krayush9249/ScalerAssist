@@ -16,13 +16,13 @@ def recursive_char_split(corpus, chunk_size=300, chunk_overlap=50):
     return documents
 
 
-def semantic_split(corpus, chunk_size=300):
+def semantic_split(corpus):
     embed_model = HuggingFaceEmbeddings(
         model_name="BAAI/bge-base-en-v1.5",
         encode_kwargs={"normalize_embeddings": True}
     )
     
-    sc_splitter = SemanticChunker(embed_model, chunk_size=chunk_size)
+    sc_splitter = SemanticChunker(embed_model)
     document = Document(page_content=corpus)
     documents = sc_splitter.split_documents([document])
 
