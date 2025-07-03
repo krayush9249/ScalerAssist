@@ -1,6 +1,6 @@
 # 🤖 ScalerAssist AI — RAG-based Chatbot
 
-**A Retrieval-Augmented Generation (RAG) assistant to explore Scaler Academy's offerings, built using Pinecone, OpenAI/Groq LLMs, and Streamlit.**
+**A Retrieval-Augmented Generation (RAG) assistant to explore Scaler Academy's offerings, built using Pinecone, Groq LLMs, and Streamlit.**
 
 ---
 
@@ -132,7 +132,7 @@ Try the app live on **Streamlit Cloud**:
 * [Scaler Academy](https://www.scaler.com)
 * [LangChain](https://www.langchain.com)
 * [Pinecone](https://www.pinecone.io)
-* [GROQ](https://www.groq.com)
+* [Groq](https://www.groq.com)
 * [HuggingFace](https://huggingface.co/)
 * [Ragas](https://docs.ragas.io/en/stable/)
 
